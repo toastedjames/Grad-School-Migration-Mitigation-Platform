@@ -1,0 +1,8 @@
+edu\vt\migration\MigrationPlatformApplication.class
+edu\vt\migration\config\SecurityConfig.class
+edu\vt\migration\health\MigrationInfoController.class
+edu\vt\migration\ticket\TicketRepository.class
+edu\vt\migration\ticket\Ticket.class
+edu\vt\migration\ticket\TicketController.class
+edu\vt\migration\ticket\TicketNotFoundException.class
+edu\vt\migration\config\DataInitializer.class
