@@ -336,45 +336,13 @@ Security is integrated into the application layer to provide protected access to
 
 ## Screenshots
 
-Screenshots of the application interface are included below.
+Screenshot of the application interface are included below.
 
 ### Application Dashboard
 
 ![Application Dashboard](screenshots/dashboard.png)
 
 The dashboard provides an overview of applications and their current migration status.
-
----
-
-### Application Assessment
-
-![Application Assessment](screenshots/application-assessment.png)
-
-The assessment interface provides application information and migration-readiness details.
-
----
-
-### Migration Planning
-
-![Migration Planning](screenshots/migration-plan.png)
-
-The migration planning interface allows users to define strategy, priority, risk, downtime, ownership, and implementation notes.
-
----
-
-### Migration Validation
-
-![Migration Validation](screenshots/validation.png)
-
-The validation interface allows migration teams to execute compatibility and readiness checks.
-
----
-
-### Migration Reports
-
-![Migration Reports](screenshots/reports.png)
-
-The reporting interface provides portfolio-level migration statistics, readiness information, risk distribution, validation results, and recent migration activity.
 
 ---
 
@@ -400,10 +368,7 @@ Grad-School-Migration-Mitigation-Platform/
 ├── .gitignore
 └── screenshots/
     ├── dashboard.png
-    ├── application-assessment.png
-    ├── migration-plan.png
-    ├── validation.png
-    └── reports.png
+
 ```
 
 ---
