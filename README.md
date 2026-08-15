@@ -401,7 +401,7 @@ mvn -version
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/Grad-School-Migration-Mitigation-Platform.git
+git clone https://github.com/toastedjames/Grad-School-Migration-Mitigation-Platform.git
 ```
 
 Navigate to the project:
