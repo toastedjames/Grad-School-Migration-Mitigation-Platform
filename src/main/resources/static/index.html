@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Graduate School IT Service Portal</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div>
+
+        <h1>Graduate School IT Service Portal</h1>
+
+        <p>Application Support & Service Management</p>
+
+    </div>
+
+    <div class="environment">
+
+        <span id="environmentBadge">
+            LOCAL
+        </span>
+
+    </div>
+
+</header>
+
+
+<main class="container">
+
+
+    <!-- DASHBOARD -->
+
+    <section class="dashboard">
+
+        <div class="stat-card">
+
+            <span class="stat-label">
+                Total Tickets
+            </span>
+
+            <span class="stat-value"
+                  id="totalTickets">
+                0
+            </span>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <span class="stat-label">
+                Open
+            </span>
+
+            <span class="stat-value"
+                  id="openTickets">
+                0
+            </span>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <span class="stat-label">
+                In Progress
+            </span>
+
+            <span class="stat-value"
+                  id="progressTickets">
+                0
+            </span>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <span class="stat-label">
+                Resolved
+            </span>
+
+            <span class="stat-value"
+                  id="resolvedTickets">
+                0
+            </span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- TOOLBAR -->
+
+    <section class="toolbar">
+
+        <div>
+
+            <h2>
+                IT Service Tickets
+            </h2>
+
+            <p>
+                Manage and monitor application support requests.
+            </p>
+
+        </div>
+
+
+        <button
+            class="primary-button"
+            onclick="openCreateModal()">
+
+            + Create Ticket
+
+        </button>
+
+    </section>
+
+
+
+    <!-- FILTERS -->
+
+    <section class="filters">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search tickets..."
+            oninput="filterTickets()">
+
+
+        <select
+            id="statusFilter"
+            onchange="filterTickets()">
+
+            <option value="ALL">
+                All Statuses
+            </option>
+
+            <option value="OPEN">
+                Open
+            </option>
+
+            <option value="IN_PROGRESS">
+                In Progress
+            </option>
+
+            <option value="RESOLVED">
+                Resolved
+            </option>
+
+        </select>
+
+
+        <select
+            id="categoryFilter"
+            onchange="filterTickets()">
+
+            <option value="ALL">
+                All Categories
+            </option>
+
+        </select>
+
+
+        <button
+            class="secondary-button"
+            onclick="loadTickets()">
+
+            Refresh
+
+        </button>
+
+    </section>
+
+
+
+    <!-- TABLE -->
+
+    <section class="table-container">
+
+        <table>
+
+            <thead>
+
+            <tr>
+
+                <th>ID</th>
+
+                <th>Title</th>
+
+                <th>Category</th>
+
+                <th>Status</th>
+
+                <th>Created</th>
+
+                <th>Actions</th>
+
+            </tr>
+
+            </thead>
+
+
+            <tbody id="ticketTableBody">
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- CREATE / EDIT MODAL -->
+
+<div
+    class="modal"
+    id="ticketModal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <h2 id="modalTitle">
+                Create Ticket
+            </h2>
+
+            <button
+                class="close-button"
+                onclick="closeModal()">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+        <form
+            id="ticketForm"
+            onsubmit="saveTicket(event)">
+
+            <input
+                type="hidden"
+                id="ticketId">
+
+
+            <label>
+                Title
+            </label>
+
+            <input
+                type="text"
+                id="title"
+                required>
+
+
+            <label>
+                Description
+            </label>
+
+            <textarea
+                id="description"
+                rows="5">
+            </textarea>
+
+
+            <label>
+                Category
+            </label>
+
+            <select
+                id="category"
+                required>
+
+                <option value="Infrastructure">
+                    Infrastructure
+                </option>
+
+                <option value="Database">
+                    Database
+                </option>
+
+                <option value="Application">
+                    Application
+                </option>
+
+                <option value="Network">
+                    Network
+                </option>
+
+                <option value="Security">
+                    Security
+                </option>
+
+                <option value="Other">
+                    Other
+                </option>
+
+            </select>
+
+
+            <label>
+                Status
+            </label>
+
+            <select
+                id="status"
+                required>
+
+                <option value="OPEN">
+                    Open
+                </option>
+
+                <option value="IN_PROGRESS">
+                    In Progress
+                </option>
+
+                <option value="RESOLVED">
+                    Resolved
+                </option>
+
+            </select>
+
+
+            <div class="form-actions">
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    onclick="closeModal()">
+
+                    Cancel
+
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="primary-button">
+
+                    Save Ticket
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
